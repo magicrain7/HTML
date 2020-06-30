@@ -19,7 +19,7 @@
             event.dataTransfer.setData("img_id", event.target.id);
             // <div><img></div>
         }
-        function drop(event){
+        function drop(event){ 
             var img_id = event.dataTransfer.getData("img_id");
             event.target.appendChild(document.getElementById(img_id));
         }
