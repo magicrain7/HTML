@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello"; //type of str -> string
+        var str2 = new String("Hello");
+        console.log(str == str2);
+        console.log(str === str2);  // ===는 data type도 같이 비교 
+
+        str = 'locate Please locate where "locate" occurs!';
+        console.log(str.indexOf('locate',10)); 
+        console.log(str.search('locate'));
+
+        var result = str.slice(7,13); // 잘라올 첫 위치값, 잘라올 마지막 위치값
+        document.write('<br>' + result + '</b>');
+
+        result= str.substr(7,13);    //7번째 글자부터 13개를 더 가지고 와라
+        document.write('<h1>' + result +'</h1>');
+
+        result  = str.replace(/locate/g, 'rocate');  //g:전체 모든 문자열을 변경 global, i:영문 대소문자를 무시, 모두 일치하는 패턴 검색 ignore
+        console.log(result);
+
+        str = 'locate Please locate where "locate" occurs!';
+
+        result = str.toLowerCase(); //소문자변환
+        result = str.toLowerCase(); //대문자변환
+
+
+        result = "Hello".concat(" World!", " Welcome"); // concat 은 두 개의 문자열을 하나의 문자열로 만들어주는 역활을 하는 함수
+        console.log(result);
+
+        var sp = "banana,orange,apple".splie(","); //문자열 자르기, 여러개의 값을 가진 배열로 변환 후 반환
+        for(var i=0; i<sp.length; i++){
+            document.write(sp[i]);
+        }
+        for(i of sp){
+            console.log(i);
+        }
+
+    </script>
+</body>
+</html>

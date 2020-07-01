@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ary = ['hong','kim','park'];
+        for(var i=0; i<ary.length; i++){
+        console.log(ary[i]);
+        }
+        ary[0] = 'hwang';
+        ary[1] = 'lee';
+        for(name of ary){     //of는 배열, index값을 가지고올때
+            console.log(name);
+        }
+
+        var ary2 = new Array('hong','kim','park');
+
+        var person = {
+            firstName:'kildong', 
+            lastName:'Hong', 
+            age:20
+        }
+        console.log(person.firstName);
+        console.log(person["firstName"]); //대괄호 안에는 다 같은 배열이 아닐수있다.
+        console.log("==========");
+        for(p in person) {  //각각의 요소를 가지고 올때 in사용
+            console.log("필드명: " + p + ", 값: " + person[p]);
+        }
+
+        var fruits =['banana', 'apple', 'orange', 'mango'];
+        document.write("<ul>");
+        for(var i = 0; i<fruits.length; i++) {
+            document.write("<li>" + fruits[i] + "</li>");
+        }
+        // for(fruit of fruits) {
+        //     document.write("<li>" + fruit + "</li>");
+        // }
+        document.write("</ul>");
+        
+        document.write("<ol>");
+        fruits.forEach(function(a,b,c){ //매개값으로 함수를 받을수 있다. a: banana, b(인덱스값): 0  c:(4) ["banana", "apple", "orange", "mango"]
+            console.log(a,b,c);
+            document.write("<li>" + a + "</li>");
+        }); 
+        document.write("</ol>");
+
+        var persons = [];
+        var person1 = {
+            firstName:"Kildong",
+            lastName:"Hong",
+            age:20
+        }
+        var person2 = {
+            firstName:"Kil",
+            lastName:"Kim",
+            age:23
+        }
+        var person3 = {
+            firstName:"dong",
+            lastName:"ong",
+            age:30
+        }
+        persons[0] = person1;
+        persons.push(person2);
+        persons.push(person3);
+        for(p of persons) {
+            console.log(p.firstName, p.lastName, p.age);
+        }
+        console.log("=====================");
+        persons.forEach(function(obj,idx,ary){
+            console.log(obj,idx,ary);
+        });
+
+        
+        document.write("<table border='2'>");
+        document.write("<tr>");
+        for(f in person1){
+            document.write("<th>" + f +"</th>");
+
+        }
+        document.write("</tr>");
+            persons.forEach(function(elm){
+            document.write("<tr>");
+            document.write("<td>"+elm.firstName+"</td><td>"
+                                 +elm.lastName+"</td><td>"
+                                 +elm.age+"</td>")
+            document.write("</tr>");
+        });
+        document.write("</table>");
+
+        
+
+        // document.write("</tr>");
+        // person.forEach(showTable);
+        // document.write("</table>");
+
+        // function showTable(elm){
+        //     document.write("<tr>");
+        //     document.write("<td>"+elm.firstName+"</td><td>"
+        //                          +elm.lastName+"</td><td>"
+        //                          +elm.age+"</td>")
+        //     document.write("</tr>");
+        // }
+
+    </script>
+</body>
+</html>

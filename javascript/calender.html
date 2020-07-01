@@ -7,7 +7,12 @@
     <script src="calender.js"> </script>
 </head>
 <body>
+    <button onclick="showCalender()">Show Cal</button>
     <script>
+        
+    function showCalender(){
+        
+    
     var titleAry=['일','월','화','수','목','금','토']
     document.createElement('table');
     document.write('<table border ="5">');
@@ -19,6 +24,7 @@
     for(var i=1; i<31; i++){
         if(i%7==0)
         document.write('<td>' + i +'</td>')
+        }
     }
     </script>
 </body>
