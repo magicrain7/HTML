@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="func1.js">
+    
+    </script>
+</head>
+<body>
+    <p class="show"></p>
+    <p class="show"></p>
+    <p id="show"></p>
+        <button onclick="sum1(2,1)">Click</button>
+        <button onclick="mySum()">mySum</button>
+        <button onclick="arrayTest()">arySum</button>
+        <button onclick="funcTest()">funcTest</button>
+        <button onclick="helloFunc()">helloFunc</button>
+    <script>
+        console.log(document.getElementsByClassName("show"));
+        var cols = document.getElementsByClassName("show");
+        // cols[0].innerHTML = "hello";
+        // cols[1].innerHTML = "world";
+       // document.getElementById("show").innerHTML = "<h1>hello</h1>";  //hello속성을 id show에 html에 담겠다.
+       
+       funcTest(); //funcTest 실행
+
+       var x = 10;
+       let y = 10; //let은 중복 사용 안됨.
+       function getXvalue() {
+          var x = 20;  
+          var y = 20;
+           console.log("x1값: " + x ); //지역변수
+           console.log('y1값: ' + y)
+       }
+
+       getXvalue();
+       console.log('x2값: ' + x) //전역변수
+       console.log('y2값: ' + y)
+    </script>
+</body>
+</html>
