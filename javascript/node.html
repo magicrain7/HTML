@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- https://www.w3schools.com/js/js_htmldom_nodes.asp  -->
+    <p id="show">
+        <table border="1" id="tbl">
+            <tr>
+                <th>EmpId</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Kildong</td>
+                <td>Hong</td>
+                <td><button>Delete</button></td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Bong</td>
+                <td>Bong</td>
+                <td><button>Delete</button></td>
+            </tr>
+
+        </table>
+    </p>
+    <script>
+        var eid = document.getElementById('tbl')
+                    .childNodes[1].childNodes[2]
+                    .childNodes[3].childNodes[0];
+        console.log(eid);
+        document.getElementById('tbl').childNodes[1].childNodes[2].childNodes[7].childNodes[0].style.background = 'aqua'
+        document.getElementById('tbl').childNodes[1].childNodes[2].childNodes[7].childNodes[0].childNodes[0].nodeValue='save'
+    </script>
+</body>
+</html>
