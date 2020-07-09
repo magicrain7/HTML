@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam01</title>
+</head>
+<body>
+    <input type="text" id="val1"> +
+    <input onchange="elementFunc()" type="text" id="val2"> =
+    <input type="text" id="result"><br>
+    <button onclick="plus()" >Click</button>
+    <script>
+        var plusfunc = function(a,b) {
+            return a + b ;
+        }
+
+        var plus = function() {
+            var val1 =document.getElementById("val1").value;
+            var val2 =document.getElementById("val2").value;
+
+            document.getElementById("result").value = parseInt(val1) + parseInt(val2)
+        }
+    </script>
+</body>
+</html>

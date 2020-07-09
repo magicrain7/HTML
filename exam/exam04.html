@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    학번: <input type="text" id="studentNo" >
+    이름: <input type="text" id="name">
+    학년: <input type="text" id="grade">
+    전공: <input type="text" id="mojor">
+    <button id="btn">Click</button>
+    <p id="show"></p>
+    <script>
+             ary = new Array();
+
+function add() {
+    studentNo = document.getElementById('studentNo').value;
+    name = document.getElementById('name').value;
+    grade = document.getElementById('grade').value;
+    major = document.getElementById('major').value;
+    ary.push({ "studentNo": studentNo, "name": name, "grade": grade, "major": major })
+}
+
+    </script>
+</body>
+</html>

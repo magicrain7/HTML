@@ -48,28 +48,28 @@
         // });
         
         //방법2
-        var titles = ["id", "first_name", "last_name", "email", "gender"];
-        var $table = document.createElement("table");
-        $table.setAttribute("border", 1);
-        var $tr = document.createElement("tr");
-        for(field of titles) {
-            var $th = document.createElement("th");
-            var $text = document.createTextNode(field.replace("_","").toUpperCase());
-            $th.appendChild($text);
-            $tr.appendChild($th);
-        }
-        $table.appendChild($tr);
-        jsonData.forEach(function(o,i,a){
-            var $tr = document.createElement("tr");
-            for(field of titles) {
-                var $td = document.createElement("td");
-                var $text = document.createTextNode(o[field]); //o.id, o.first_name
-                $td.appendChild($text);
-                $tr.appendChild($td);
-            }
-            $table.appendChild($table);
-        });
-        var show = document.getElementById("show");
+        // var titles = ["id", "first_name", "last_name", "email", "gender"];
+        // var $table = document.createElement("table");
+        // $table.setAttribute("border", 1);
+        // var $tr = document.createElement("tr");
+        // for(field of titles) {
+        //     var $th = document.createElement("th");
+        //     var $text = document.createTextNode(field.replace("_","").toUpperCase());
+        //     $th.appendChild($text);
+        //     $tr.appendChild($th);
+        // }
+        // $table.appendChild($tr);
+        // jsonData.forEach(function(o,i,a){
+        //     var $tr = document.createElement("tr");
+        //     for(field of titles) {
+        //         var $td = document.createElement("td");
+        //         var $text = document.createTextNode(o[field]); //o.id, o.first_name
+        //         $td.appendChild($text);
+        //         $tr.appendChild($td);
+        //     }
+        //     $table.appendChild($table);
+        // });
+        // var show = document.getElementById("show");
         // show.appendChild(document.createElement("h3").appendChild(document.createTextNode("학생목록")));
         // .createElement()는 요소를 만듬
         // .createTextNode()는 선택한 요소에 텍스트를 추가

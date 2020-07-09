@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="table.css"/>
+</head>
+<script>
+    function showCurrentTime() {
+        document.getElementById("show").innerHTML = Date();
+    }
+    function btnFunc() {
+        var $td = document.createElement("td");
+        var $button = document.createElement("button");
+        $button.innerHTML = "Click";
+
+        $button.onclick = function () {
+            this.parentNode.parentNode.remove();
+        }
+        $td.appendChild($button);
+        $tr.appendChild($td);
+        $table.appendChild($tr);
+    }
+    function btnClassFunc() {
+        var btns = document.getElementsByClassName('btnClass');
+        btns = document.getElementsByTagName('button');
+        for(var i=0; i<btns.length; i++) {
+            btns[i].onclick = function() {
+                btns[i].parentNode.parentNode.remove();
+            }
+
+        }
+    }
+</script>
+</head>
+
+<body>
+ID:<input type="text" id="eid" >
+FName:<input type="text" id="first_name">
+LName:<input type="text" id="last_name">
+<button id="btn">Click</button>
+<p id="show"></p>
+<script>
+    var btn = document.getElementById('btn');
+    console.log(btn);
+    btn.onclick = function() {
+        var inputs = document.getElementsByTagName('input');
+        var $tr = document.createElement('tr');
+        for ( var i=0; i<inputs.length; i++) {
+            var $td = document.createElement('td');
+            var $text = document.createTextNode(inputs[i].value);
+            $td.appendChild($text);
+            $tr.appendChild($td);
+        }
+        var $td = document.createElement("td");
+        var $button = document.createElement("button");
+        $button.innerHTML = "Click";
+        $button.onmouseover = function () {
+            this.parentNode.parentNode.style.background = "yellow";
+        }
+        $button.onmouseout = function () {
+            this.parentNode.parentNode.style.background = "";
+        }
+        $button.onclick = function () {
+            this.parentNode.parentNode.remove();
+        }
+        $td.appendChild($button);
+        $tr.appendChild($td);
+        $table.appendChild($tr);
+    }
+
+    var jsonData = [{"id":1,"first_name":"Mary","last_name":"Rieme","email":"mrieme0@nationalgeographic.com","gender":"Female"},
+{"id":2,"first_name":"Darbee","last_name":"Rowter","email":"drowter1@posterous.com","gender":"Male"},
+{"id":3,"first_name":"Artus","last_name":"Tollerton","email":"atollerton2@booking.com","gender":"Male"},
+{"id":4,"first_name":"Inesita","last_name":"Waith","email":"iwaith3@sfgate.com","gender":"Female"},
+{"id":5,"first_name":"Fernande","last_name":"Langstaff","email":"flangstaff4@cbsnews.com","gender":"Female"},
+{"id":6,"first_name":"Carly","last_name":"Billborough","email":"cbillborough5@cbc.ca","gender":"Male"},
+{"id":7,"first_name":"Francis","last_name":"Prantl","email":"fprantl6@sohu.com","gender":"Male"},
+{"id":8,"first_name":"Ilyse","last_name":"Mintoff","email":"imintoff7@fastcompany.com","gender":"Female"},
+{"id":9,"first_name":"Martie","last_name":"Petty","email":"mpetty8@canalblog.com","gender":"Male"},
+{"id":10,"first_name":"Cob","last_name":"Greson","email":"cgreson9@themeforest.net","gender":"Male"},
+{"id":11,"first_name":"Janaye","last_name":"Lude","email":"jludea@taobao.com","gender":"Female"},
+{"id":12,"first_name":"Marcella","last_name":"Sarfatti","email":"msarfattib@printfriendly.com","gender":"Female"},
+{"id":13,"first_name":"Annabela","last_name":"Klehyn","email":"aklehync@wiley.com","gender":"Female"},
+{"id":14,"first_name":"Bondie","last_name":"Rablan","email":"brabland@tumblr.com","gender":"Male"},
+{"id":15,"first_name":"Lurleen","last_name":"Nashe","email":"lnashee@blogs.com","gender":"Female"}]
+    console.log(jsonData);
+
+    var titles = ["id", "first_name", "last_name"];
+
+    var $table = document.createElement("table");
+    $table.setAttribute("border", "1");
+    $table.setAttribute("id", "tbl");
+    var $tr = document.createElement("tr");
+    for (field of titles) {
+        var $th = document.createElement("th");
+        var $text = document.createTextNode(field.replace("_", "").toUpperCase());
+        $th.appendChild($text);
+        $tr.appendChild($th);
+    }
+    $table.appendChild($tr);
+    jsonData.forEach(function (o, i, a) {
+        var $tr = document.createElement("tr");
+        for (field of titles) {
+            var $td = document.createElement("td");
+            var $text = document.createTextNode(o[field]); // o.id, o.first_name
+            $td.appendChild($text);
+            $tr.appendChild($td);
+        }
+        $table.appendChild($tr);
+        // btnFunc();
+        var $td = document.createElement("td");
+        var $button = document.createElement("button");
+        $button.innerHTML = "Click";
+    
+        $button.onmouseout = function () {
+            this.parentNode.parentNode.style.background = "";
+        }
+        $button.onclick = function () {
+            this.parentNode.parentNode.remove();
+        }
+        $td.appendChild($button);
+        $tr.appendChild($td);
+        $table.appendChild($tr);
+    });
+    var show = document.getElementById("show");
+
+    show.appendChild($table);
+
+</script>
+</body>
+
+</html>
