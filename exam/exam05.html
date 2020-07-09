@@ -7,9 +7,6 @@
     <link type="text/css" rel="stylesheet" href="table.css"/>
 </head>
 <script>
-    function showCurrentTime() {
-        document.getElementById("show").innerHTML = Date();
-    }
     function btnFunc() {
         var $td = document.createElement("td");
         var $button = document.createElement("button");
@@ -42,8 +39,7 @@ LName:<input type="text" id="last_name">
 <button id="btn">Click</button>
 <p id="show"></p>
 <script>
-    var btn = document.getElementById('btn');
-    console.log(btn);
+   
     btn.onclick = function() {
         var inputs = document.getElementsByTagName('input');
         var $tr = document.createElement('tr');
@@ -87,7 +83,7 @@ LName:<input type="text" id="last_name">
 {"id":15,"first_name":"Lurleen","last_name":"Nashe","email":"lnashee@blogs.com","gender":"Female"}]
     console.log(jsonData);
 
-    var titles = ["id", "first_name", "last_name"];
+    var titles = ["id", "first_name", "last_name","email", "gender"];
 
     var $table = document.createElement("table");
     $table.setAttribute("border", "1");
@@ -104,7 +100,7 @@ LName:<input type="text" id="last_name">
         var $tr = document.createElement("tr");
         for (field of titles) {
             var $td = document.createElement("td");
-            var $text = document.createTextNode(o[field]); // o.id, o.first_name
+            var $text = document.createTextNode(o[field]);
             $td.appendChild($text);
             $tr.appendChild($td);
         }
@@ -114,9 +110,6 @@ LName:<input type="text" id="last_name">
         var $button = document.createElement("button");
         $button.innerHTML = "Click";
     
-        $button.onmouseout = function () {
-            this.parentNode.parentNode.style.background = "";
-        }
         $button.onclick = function () {
             this.parentNode.parentNode.remove();
         }
