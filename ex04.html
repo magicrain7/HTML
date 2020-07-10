@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    학번<input type="number" id='studentNo'><br>
+    이름<input type="text" id='name'><br>
+    학년
+    <select id="grade">
+        <option value="1">1학년</option>
+        <option value="2">2학년</option>
+        <option value="3">3학년</option>
+    </select>
+    <br>
+
+    전공:
+    <select id="major">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">Javascript</option>
+        <option value="python">Python</option>
+    </select>
+    <br>
+
+    <button onclick="add()">추가</button>
+
+    <hr>
+    <select id="show_grade">
+        <option value="1">1학년</option>
+        <option value="2">2학년</option>
+        <option value="3">3학년</option>
+    </select>
+    <button id="show_btn" onclick="showAll()">
+        보여주기
+    </button>
+
+
+    <p id="show"></p>
+
+    <script>
+        ary = new Array();
+
+        function add() {
+            studentNo = document.getElementById('studentNo').value;
+            name = document.getElementById('name').value;
+            grade = document.getElementById('grade').value;
+            major = document.getElementById('major').value;
+            ary.push({ "studentNo": studentNo, "name": name, "grade": grade, "major": major })
+        }
+
+        function showAll() {
+            grade = parseInt(document.getElementById("show_grade").value)
+
+            //console.log(showAry);
+            document.getElementById("show").innerHTML = "";
+
+            //테이블 생성
+            var $table = document.createElement("table");
+            $table.setAttribute("border", "1");
+            $table.setAttribute("id", "tbl");
+
+            //타이틀 생성
+            var titles = ["studentNo", "name", "grade", "major"];
+            var $tr = document.createElement("tr");
+            for (field of titles) {
+                var $th = document.createElement("th");
+                var $text = document.createTextNode(field.replace("_", "").toUpperCase());
+                $th.appendChild($text);
+                $tr.appendChild($th);
+            }
+            $table.appendChild($tr);
+            
+            filterAry = ary.filter(function (o, i) {
+                return o.grade == grade;
+            })
+            
+            for(index in filterAry){
+                var $tr = document.createElement("tr");
+                for(field of titles){
+                    var $td = document.createElement("td");
+                    var $text = document.createTextNode(filterAry[index][field]);
+                    $td.appendChild($text);
+                    $tr.appendChild($td);
+                }
+                $table.appendChild($tr);
+            }
+
+
+            document.getElementById("show").appendChild($table);
+        }
+    </script>
+</body>
+
+</html>

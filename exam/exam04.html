@@ -8,45 +8,8 @@
 <body>
     학번: <input type="text" id="studentNo" >
     이름: <input type="text" id="name">
-    학년: <select id="grade">
-          <option value="1">1학년</option>
-          <option value="2">2학년</option>
-          <option value="3">3학년</option>
-           </select>
-    전공: <select name="major">
-         <option value="html">HTML</option>
-         <option value="css">css</option>
-         <option value="js">js</option>
-         <option value="phthon">phthon</option>
-         </select> 
+    학년: <input type="text" id="grade">
+    전공: <input type="text" id="mojor">
     <button id="btn">Click</button>
-    <p id="show"></p>
-    <script>
-    array = new Array();
-
-    function btn() {
-    studentNo = document.getElementById('studentNo').value;
-    name = document.getElementById('name').value;
-    grade = document.getElementById('grade').value;
-    major = document.getElementById('major').value;
-    arry.push({ "studentNo": studentNo, "name": name, "grade": grade, "major": major })
-}
-
-     var $table = document.createElement("table");
-            $table.setAttribute("border", "1");
-            $table.setAttribute("id", "tbl");
-
-    var titles = ["studentNo", "name", "grade", "major"];
-        var $tr = document.createElement("tr");
-        for (field of titles) {
-            var $th = document.createElement("th");
-            var $text = document.createTextNode(field.replace("_", "").toUpperCase());
-            $th.appendChild($text);
-            $tr.appendChild($th);
-        }
-        $table.appendChild($tr);
-        document.getElementById("show").appendChild($table);
-            
-    </script>
 </body>
 </html>

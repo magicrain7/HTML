@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var $table = $('<table/>').attr('border','1'); //document.createElement('table')
+            // $table.attr('border', '1');
+            var $th = $('<th/>').append(
+                $('<th />').text('학번'),
+                $('<th />').text('이름'),
+                $('<th />').text("점수")
+            )
+            $table.append($th);
+            var $tr = $('<tr/>').append(
+                $('<td />').text('101'),
+                $('<td />').text('Hong'),
+                $('<td />').text(90),
+                $('<td />').html('<button>click</button>')
+            );
+            $table.append($tr);
+            $('#show').append($table);
+        });
+    </script>
+</head>
+<body>
+    <p id="show"></p>
+    <script>
+        
+    </script>
+</body>
+</html>

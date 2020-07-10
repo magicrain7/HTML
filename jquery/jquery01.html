@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                console.log($('button'));
+                $("ul li:first-child").hide();
+                // var lis = document.querySelectorAll("ul")[0].querySelectorAll('li:nth-child(1)');
+                // for (var i = 0; i < lis.length; i++) {
+                //     lis[i].style.display = 'none';
+                // }
+            });
+
+            $('button').eq(0).hover(function(){ //eq는 인덱스값으로 정하고 싶을때
+                $(this).css('background','blue');
+            }, function(){
+                $(this).css('background','yellow');
+                
+            });   //hover는 진입하고 빠져나오는거 2개다 정의해줘야됨
+
+            $('li').click(function() {
+                $(this).hide();
+            })
+            $('li').mouseenter(function() {
+                $(this).css('background','aqua');
+            })
+            $('li').mouseleave(function() {
+                $(this).css('background','');
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>List 1:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <button>Click me</button>
+    <button>Click me</button>
+
+</body>
+
+</html>
