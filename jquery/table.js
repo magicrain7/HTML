@@ -8,33 +8,64 @@ var jsonData = [{ "id": 1, "first_name": "Mary", "last_name": "Rieme", "email": 
 { "id": 8, "first_name": "Ilyse", "last_name": "Mintoff", "email": "imintoff7@fastcompany.com", "gender": "Female" },
 { "id": 15, "first_name": "Lurleen", "last_name": "Nashe", "email": "lnashee@blogs.com", "gender": "Female" }]
 
-var titles = ['id','first_name','last_name','email','gender'];
+// var titles = ['id','first_name','last_name','email','gender'];
 
-$(document).ready(function() {
-    var $table = $('<table />').attr('border','1');
-    var $tr = $('<tr/>');
-    titles.forEach(function(o){
-        $tr.append($('<th/>').text(o));
+// $(document).ready(function() {
+//     var $table = $('<table/>').attr('border','1');
+//     var $tr = $('<tr/>');
+//     titles.forEach(function(o){
+//         $tr.append($('<th/>').text(o));
+//     });
+//     $table.append($tr);
+//     //데이터 영역.
+//     jsonData.forEach(function(o) {
+//         $tr = $('<tr/>').mouseenter(mouseenterFunc)
+//                          .mouseout(mouseoutFunc);
+//         titles.forEach(function(f){
+//             $tr.append($('<td/>').text(o[f]));
+//         })
+        
+//         $tr.append($('<td/>').append($('<button/>').text('Click').click(btnFunc)));  //이거 왜 안되노
+//         $table.append($tr);
+//     });
+
+//     $('#show').append($table);
+// })
+
+// function mouseenterFunc() {
+//     $(this).css('background','aqua');
+// }
+// function mouseoutFunc() {
+//     $(this).css('background','');
+// }
+
+var titles = ['id', 'first_name', 'last_name', 'email', 'gender'];
+
+$(document).ready(function () {
+    var $table = $('<table />').attr('border', '1');
+    var $tr = $('<tr />');
+    titles.forEach(function (o) {
+        $tr.append($('<th />').text(o));
     });
     $table.append($tr);
-    //데이터 영역.
-    jsonData.forEach(function(o) {
+    // 데이터 영역.
+    jsonData.forEach(function (o) {
         $tr = $('<tr />').mouseenter(mouseenterFunc)
                          .mouseout(mouseoutFunc);
-        titles.forEach(function(f){
+        titles.forEach(function (f) {
             $tr.append($('<td />').text(o[f]));
         })
-        
-        $tr.append($('<td> />').append($('<button/>').text('Click').click(btnFunc)));  //이거 왜 안되노
+        $tr.append($('<td />').append($('<button />').text('Click').click(btnFunc)));
         $table.append($tr);
     });
-
     $('#show').append($table);
 })
-
+function btnFunc() {
+    $(this).parent().parent().hide();
+}
 function mouseenterFunc() {
-    $(this).css('background','aqua');
+    $(this).css('background', 'yellow');
 }
 function mouseoutFunc() {
-    $(this).css('background','');
+    $(this).css('background', '');
 }
